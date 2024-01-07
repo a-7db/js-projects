@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NG Game</title>
+</head>
+<body>
+    <script>
+        const minNum = 1;
+        const maxNum = 100;
+        const answer = Math.floor(Math.random() * (maxNum - minNum) + minNum)
+
+        let attemps = 0;
+        let guess;
+        let running = true;
+
+        while(running){
+            guess = prompt(`Enter a number between ${minNum} - ${maxNum}`)
+            guess = Number(guess)
+            // Validation
+            if(isNaN(guess)){
+                alert(`${guess} is not a valid value, please try again`)
+            } else if (minNum > guess || maxNum < guess) {
+                alert(`${guess} is not a valid value, please try again`)
+            }
+            else {
+                attemps++;
+                if(answer < guess){
+                    alert('TO HEIGH TRY AGAIN')
+                } else if(answer > guess){
+                    alert('TO LOW TRY AGAIN')
+                } else {
+                    alert(`CORRECT! The answer was ${answer}. it tooks you ${attemps} attemps`)
+
+                    running = false
+                }
+            }
+
+        }
+    </script>
+</body>
+</html>

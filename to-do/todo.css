@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-size: 1.1rem;
+}
+
+body {
+    background-color: #2a0541;
+    height: 100vh;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 2rem 5rem;
+}
+
+.create {
+    background-color: #1b0628;
+    padding: 2rem 4rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: .7rem;
+}
+
+.create input#task-name {
+    background: #2a0541;
+    border: .8px solid #420d62;
+    border-radius: 50px;
+    padding: .3rem .9rem;
+    outline: none;
+    color: #c25fff;
+    font-size: 1rem;
+}
+
+.create input#task-name::placeholder {
+    font-size: 1rem;
+    color: #6a169e;
+}
+
+.create #add-btn, #edit-btn {
+    width: 40%;
+    border-radius: 50px;
+    border: 1px solid #2a0541;    
+    padding: .2rem;
+    background-color: #1b0628;
+    color: #6a169e;
+    font-size: .8rem;
+    cursor: pointer;
+    /* transition-duration: 1s; */
+}
+
+#edit-btn {
+    display: none;
+}
+
+.create #add-btn:hover,
+.create #edit-btn:hover {
+    background: #420d62;
+    color: #1b0628;
+}
+
+.todo-list{
+    margin-top: 2rem;
+    display: flex;
+    gap: 3rem;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.box{
+    background-color: #9a70b4;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 3px 2px 6px 3px #0000008c;
+    width: 10rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 10rem;
+}
+
+.texts h3{
+    margin: .2rem 0;
+    color: #1b0628;
+}
+
+.texts p{
+    font-size: .7rem;
+    color: #420d62;
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+}
+
+.texts p i{
+    font-size: .9rem;
+}
+
+
+.icons {
+    margin: 1rem 0;
+    width: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.icons a {
+    padding: .2rem;
+    background-color: #2a0541;
+    color: #9a70b4;
+    border-radius: 50%;
+    display: flex;
+    cursor: pointer;
+}
+
+.icons a:hover {
+    background: none;
+    border: 1px solid #420d62;
+}
+
+.icons a i:hover{
+    color: #420d62;
+
+}
+
+.red {
+    background-color: #650b0b !important;
+}
+.red:hover {
+    border: none !important;
+}
+.red i:hover {
+    color: #fff !important;
+}
+
+.green {
+    background-color: rgb(6, 66, 6) !important;
+}
+.green:hover {
+    border: none !important;
+}
+.green i:hover {
+    color: #fff !important;
+}
