@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Pass Gene</title>
+</head>
+<body>
+    
+<script>
+    
+const length = 8;
+const includeLowerCase = true;
+const includeUpperCase = true;
+const inculdeNumbers = false;
+const includeSymbols = false
+
+function GeneratePassword(length, includeLowerCase, includeUpperCase, inculdeNumbers, includeSymbols){
+
+    const lowerCharcters = 'abcdefghijklmnkopqrstuvwxyz';
+    const upperCharcters = 'ABCDEFGHIJKLMNKOPQRSTUVWXYZ';
+    const numbers = '0123456789';
+    const symbols = '!@#$%^&*-_/';
+
+    let allowedChar = '';
+    let password = '';
+
+    allowedChar += includeLowerCase? lowerCharcters : '';
+    allowedChar += includeUpperCase? upperCharcters : '';
+    allowedChar += inculdeNumbers? numbers : '';
+    allowedChar += includeSymbols? symbols : '';
+
+    if(length <= 0){
+        return 'Cannot Generate Password with 0 Lenght or Less';
+    }
+
+    if(allowedChar.length <= 0){
+        return 'At least 1 set of character needs to be selescted';
+    }
+
+    for(let i = 0; i < length; i++){
+        const randomIndex = Math.floor(Math.random() * allowedChar.length + 1);
+        password += allowedChar[randomIndex];
+    }
+
+    return password;
+}
+
+let password = GeneratePassword(length, includeLowerCase, includeUpperCase, inculdeNumbers, includeSymbols);
+console.log(password);
+    
+</script>
+</body>
+</html>
