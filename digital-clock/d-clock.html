@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+
+    <style>
+        .clock-container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #clock {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 3.5rem;
+            color: rgb(9, 79, 125);
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock-container">
+        <div id="clock">00:00:00</div>
+    </div>
+
+    <script>
+        const clock = document.getElementById('clock');
+
+        function updateColuck() {
+            const time = new Date()
+            let hours = time.getHours()
+            const isAm = hours >= 12 ? 'AM' : 'PM'
+            hours = hours % 12 || 12
+            hours = hours.toString().padStart(2, 0);
+            const minutes = time.getMinutes().toString().padStart(2, 0);
+            const seconds = time.getSeconds().toString().padStart(2, 0);
+            const timeString = `${hours}:${minutes}:${seconds}`
+
+            clock.textContent = timeString
+        }
+
+        updateColuck()
+        setInterval(updateColuck, 1000)
+
+
+    </script>
+</body>
+
+</html>
