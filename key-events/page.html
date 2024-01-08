@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Events</title>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: rgb(158, 36, 138);
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #emoji{
+            font-size: 5rem;
+            width: 115px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div id="emoji">😎</div>
+
+    <script>
+        let body = document.querySelector('body')
+        let emoji = document.getElementById('emoji')
+
+        const steps = 10;
+        let x = 0;
+        let y = 0;
+
+        document.addEventListener('keydown', e => {
+
+            if(e.key.startsWith('Arrow')){
+                e.preventDefault()
+                switch(e.key){
+                    case 'ArrowUp':
+                        y -= steps;
+                        break;
+                    
+                    case 'ArrowDown':
+                        y += steps
+                        break;
+
+                    case 'ArrowRight':
+                        x += steps
+                        break;
+
+                    case 'ArrowLeft':
+                        x -= steps
+                        break;
+                }
+
+                emoji.style.top = `${y}px`
+                emoji.style.left = `${x}px`
+            }
+        })
+
+        document.addEventListener('keydown', e => {
+            emoji.textContent = '😣'
+            body.style.backgroundColor = 'rgb(158, 36, 68)'
+        })
+        
+        document.addEventListener('keyup', e => {
+            emoji.textContent = '😎'
+            body.style.backgroundColor = 'rgb(158, 36, 138)'
+        })
+    </script>
+</body>
+</html>
